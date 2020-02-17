@@ -1,0 +1,17 @@
+@import '../../partials/colors';
+
+.Button {
+  border: 3px solid $color-blue;
+  background-color: transparent;
+  padding: 12px 25px;
+  font-weight: 700;
+  color: $color-blue;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  &:hover,
+  &:active {
+    cursor: pointer;
+    background-color: $color-blue;
+    color: #ffffff;
+  }
+}

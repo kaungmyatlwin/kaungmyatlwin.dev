@@ -1,0 +1,75 @@
+.Chat {
+  &__Container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  &__Window {
+    height: calc(100vh - 48px);
+    padding: 10px;
+    overflow: auto;
+  }
+  &__Bubble {
+    display: inline-block;
+    max-width: 85%;
+    overflow-wrap: break-word;
+    padding: 8px 10px;
+    border-radius: 6px;
+    &:first {
+      margin-top: 0;
+    }
+    margin-top: 5px;
+  }
+  &__FromBubble {
+    float: left;
+    background: #4e4e4e;
+    color: #f1f1f1;
+  }
+  &__ToBubble {
+    float: right;
+    background: #dddddd;
+    color: #2c2c2c;
+  }
+  &__Form {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #dddddd;
+    height: 48px;
+  }
+  &__Input {
+    width: 85%;
+    padding: 10px;
+    border: 0;
+    background: transparent;
+    outline: none;
+  }
+  &__Send {
+    width: 15%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    // margin-bottom: 8px;
+    img {
+      margin: 0;
+    }
+  }
+}
+
+.bubble-enter {
+  opacity: 0;
+}
+.bubble-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+.bubble-exit {
+  opacity: 1;
+}
+.bubble-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
