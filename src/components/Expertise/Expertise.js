@@ -9,8 +9,8 @@ const services = [
   },
   {
     icon: 'ri-terminal-box-line',
-    title: 'API Development',
-    body: 'For both clients & developers, I code secure APIs to integrate into their apps, ranging from Public to Private APIs.'
+    title: 'Backend Development',
+    body: 'For both clients & developers, I code secure backend APIs to integrate into their apps, ranging from Public to Private APIs.'
   },
   {
     icon: 'ri-cloud-line',
@@ -19,7 +19,7 @@ const services = [
   }
 ];
 
-const Projects = (props, ref) => {
+const Expertise = (props, ref) => {
   return (
     <section id="expertise" className="Expertise" ref={ref}>
       <div className="container">
@@ -41,9 +41,12 @@ const Projects = (props, ref) => {
             })
           }
         </div>
+        <div className="row">
+          <div className="col-12">Tech demo perhaps?</div>
+        </div>
       </div>
     </section>
   )
 };
 
-export default forwardRef(Projects);
+export default forwardRef(Expertise);

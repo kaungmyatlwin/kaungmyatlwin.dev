@@ -98,3 +98,20 @@
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+h1 {
+  font-size: 3rem;
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 4rem;
+    margin: 1rem 0;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}
