@@ -1,0 +1,26 @@
+@import '../../partials/colors';
+
+.SideNavigation {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translate(-25% ,-50%);
+  z-index: 100;
+  ul {
+    // display: flex;
+    height: 20vh;
+    // flex-direction: column;
+    // justify-content: space-between;
+    list-style: none;
+    li {
+      margin-bottom: 80px;
+      text-align: center;
+      transform: rotate(90deg);
+      cursor: pointer;
+      &.active {
+        transition: color 0.25s ease-in;
+        color: $color-blue;
+      }
+    }
+  }
+}

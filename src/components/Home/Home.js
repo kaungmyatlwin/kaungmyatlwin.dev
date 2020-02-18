@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import {
   TransitionGroup,
@@ -12,10 +12,9 @@ import Button from '../Button/Button';
 
 const personalities = ['software developer', 'dog lover', 'linux enthusiast'];
 
-const Home = () => {
+const Home = (props, ref) => {
   const [personality, setPersonality] = useState(personalities[0]);
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
-  const [fadingPersonality, setFadingPersonality] = useState(false);
   // const weatherData = useStaticQuery(graphql`
   //   query {
   //     openWeather {
@@ -30,18 +29,6 @@ const Home = () => {
   //   .toString()
   //   .slice(0, 1);
 
-  useEffect(() => {
-    let personalityIdx = 0;
-    setInterval(() => {
-      setFadingPersonality(!fadingPersonality);
-      setPersonality(personalities[personalityIdx]);
-      personalityIdx += 1;
-      if (personalities.length === personalityIdx) {
-        personalityIdx = 0;
-      }
-    }, 1000);
-  }, []);
-
   const weatherCode = '8';
 
   const weatherEmoji = (
@@ -53,8 +40,6 @@ const Home = () => {
           case '3':
           case '5':
             return '🌧️';
-          case '6':
-            return '🌨️';
           case '7':
             return '🌫️';
           case '8':
@@ -77,7 +62,7 @@ const Home = () => {
   };
 
   return (
-    <section className="Home__Header">
+    <section id="home" className="Home__Header" ref={ref}>
       <div className="container-fluid h-100">
         <div className="row align-items-center h-100">
           <div className="col-lg-6 col-md-12 Home__aboutWrapper">
@@ -158,4 +143,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default forwardRef(Home);

@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import 'normalize.css';
+import 'remixicon/fonts/remixicon.css'
 // import './layout.css';
 import './base.scss';
 
