@@ -3,8 +3,8 @@
 .SideNavigation {
   position: fixed;
   top: 50%;
-  right: 0;
-  transform: translate(-25% ,-50%);
+  left: 0px;
+  transform: translate(100%, 0);
   z-index: 100;
   ul {
     // display: flex;
@@ -15,12 +15,15 @@
     li {
       margin-bottom: 80px;
       text-align: center;
-      transform: rotate(90deg);
+      transform: rotate(270deg);
       cursor: pointer;
       &.active {
         transition: color 0.1s ease-in;
         color: $color-blue;
       }
     }
+  }
+  @media (min-width: 1200px) {
+    transform: translate(20% ,-50%);
   }
 }

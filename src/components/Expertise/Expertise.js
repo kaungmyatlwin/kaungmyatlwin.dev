@@ -30,19 +30,22 @@ const Expertise = (props, ref) => {
           {
             services.map(({ icon, title, body }, i) => {
               return (
-                <div className="col-4 text-center" key={i}>
+                <div className="col-xs-12 col-md-4 text-center" key={i}>
                   <div className="Expertise__icons">
                     <i className={icon}></i>
                   </div>
+              {/* <h2 className="text-center">{
+                title
+                  .split(' ')
+                  .map((t, j) => j === 0 ? <span className="color-blue">{t} </span> : t)
+                }
+              </h2> */}
                   <h2 className="text-center">{title}</h2>
                   <p>{body}</p>
                 </div>
               );
             })
           }
-        </div>
-        <div className="row">
-          <div className="col-12">Tech demo perhaps?</div>
         </div>
       </div>
     </section>

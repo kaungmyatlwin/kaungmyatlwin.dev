@@ -1,0 +1,29 @@
+.Contact {
+  background-color: white;
+}
+
+.contactForm {
+  &__control {
+    margin: 10px 0;
+    label {
+      margin: 5px 0;
+    }
+  }
+  &__input, &__select, &__message {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    outline: 0;
+  }
+  &__select {
+    cursor: pointer;
+    background-color: transparent;
+  }
+  &__message {
+    background-color: transparent;
+  }
+  &__submitBtn {
+    display: block;
+    margin: 0 auto;
+  }
+}

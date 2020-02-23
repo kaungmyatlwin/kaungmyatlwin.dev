@@ -99,13 +99,37 @@
   background: transparent;
 }
 
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+label {
+  display: block;
 }
 
 @media (min-width: 1200px) {
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 1rem 0;
   }
   h2 {

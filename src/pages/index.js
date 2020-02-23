@@ -35,7 +35,7 @@ class IndexPage extends PureComponent {
     return (
     <Layout>
       <SEO title="Home" />
-      <SideNavigation activeNav={this.state.activeNav} />
+      {/* <SideNavigation activeNav={this.state.activeNav} /> */}
       <Home ref="home"/>
       <Expertise ref="expertise" />
       <Contact ref="contact" />

@@ -6,7 +6,7 @@ import {
   CSSTransition,
   Transition,
 } from 'react-transition-group';
-import kmlPic from '../../images/kml.jpg';
+import kmlPic from '../../images/kml-transparent.png';
 import './Home.scss';
 import Button from '../Button/Button';
 
@@ -15,6 +15,7 @@ const personalities = ['software developer', 'dog lover', 'linux enthusiast'];
 const Home = (props, ref) => {
   const [personality, setPersonality] = useState(personalities[0]);
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
+  const [imagePos, setImagePos] = useState({ xPos: 0, yPos: 0 });
   // const weatherData = useStaticQuery(graphql`
   //   query {
   //     openWeather {
@@ -61,10 +62,18 @@ const Home = (props, ref) => {
     exited: { opacity: 0 },
   };
 
+  function onMouseMove(e) {
+    console.log(-e.clientY);
+    setImagePos({
+      xPos: -e.clientX,
+      yPos: -e.clientY,
+    });
+  }
+
   return (
     <section id="home" className="Home__Header" ref={ref}>
       <div className="container-fluid h-100">
-        <div className="row align-items-center h-100">
+        <div className="row no-gutters align-items-center h-100">
           <div className="col-lg-6 col-md-12 Home__aboutWrapper">
             <div className="Home__aboutKML">
               <SwitchTransition mode="out-in">
@@ -109,15 +118,15 @@ const Home = (props, ref) => {
                           <span className="color-blue">Hello</span> there!
                         </h1>
                         <h2>
-                          I am Kaung Myat{' '}
+                          My name is Kaung Myat{' '}
                           <span className="color-blue">Lwin</span>.
                         </h2>
-                        <h3>
+                        <h2>
                           A{' '}
-                          <span className="color-blue">Software Developer</span>{' '}
+                          <span className="color-blue">software developer</span>{' '}
                           based in {weatherEmoji}{' '}
                           <span className="color-gold">Yangon</span>.
-                        </h3>
+                        </h2>
                       </>
                     )}
                   </div>
@@ -125,16 +134,20 @@ const Home = (props, ref) => {
               </SwitchTransition>
               <Button
                 className="text-uppercase Home__aboutKMLBtn"
+                style={{ minWidth: 150, maxWidth: 150 }}
                 onClick={onClickAboutMe}
               >
-                {!isAboutMeOpen ? 'About Me' : 'Close'}
+                {!isAboutMeOpen ? 'About' : 'Close'}
               </Button>
             </div>
           </div>
           <div className="col-lg-6 col-md-12 Home__kmlPic">
             <div
               className="Home__bg"
-              style={{ backgroundImage: `url(${kmlPic})` }}
+              // onMouseMove={onMouseMove}
+              style={{
+                backgroundImage: `url(${kmlPic})`,
+              }}
             ></div>
           </div>
         </div>

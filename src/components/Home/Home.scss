@@ -1,33 +1,36 @@
 @import '../../partials/colors';
 
-$aboutContainerWidth: 330px;
+$aboutContainerWidth: 360px;
 
 .Home {
+  h1 {
+    font-size: 1rem;
+    margin: 0rem 0;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
   &__Header {
     width: 100%;
     height: 100vh;
     color: #272727;
     background-color: #f2f2f2;
-    h1 {
-      font-size: 4rem;
-      margin: 1rem 0;
-    }
-    h2 {
-      font-size: 2.5rem;
-    }
-    h3 {
-      font-size: 2rem;
-    }
   }
   &__kmlPic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
   }
   &__bg {
     width: 100%;
-    height: 100%;
+    height: 50%;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center center;
   }
   &__AboutMe {
     line-height: 30px;
@@ -38,6 +41,9 @@ $aboutContainerWidth: 330px;
   }
 
   @media (min-width: 1200px) {
+    &__kmlPic {
+      height: 100%;
+    }
     &__aboutWrapper {
       height: $aboutContainerWidth;
       max-height: $aboutContainerWidth;
@@ -58,6 +64,7 @@ $aboutContainerWidth: 330px;
       position: absolute;
       left: 200;
       bottom: 0;
+      font-size: 1rem;
     }
   }
 }

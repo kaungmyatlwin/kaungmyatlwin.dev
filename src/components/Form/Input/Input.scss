@@ -1,0 +1,13 @@
+@import '../../../partials/colors';
+
+.Input {
+  padding: 5px 10px;
+  border: 2px solid $color-grey;
+  outline: 0;
+  transition: border 0.2s ease-in;
+  background-color: #ffffff;
+  border-radius: 5px;
+  &:focus, &:active, &:hover {
+    border: 2px solid $color-blue;
+  }
+}
