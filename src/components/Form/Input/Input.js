@@ -13,6 +13,15 @@ const TextArea = (props) => {
   );
 }
 
+const Select = (props) => {
+  return (
+    <select {...props} className={`Input ${props.className}`}>
+      {props.children}
+    </select>
+  )
+}
+
 Input.TextArea = TextArea;
+Input.Select = Select;
 
 export default Input;
