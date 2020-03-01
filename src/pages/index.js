@@ -9,6 +9,7 @@ import Expertise from '../components/Expertise/Expertise';
 import Contact from '../components/Contact/Contact';
 // import Image from '../components/image';
 import SEO from '../components/seo';
+import Experience from '../components/Experience/Experience';
 
 class IndexPage extends PureComponent {
   state = {
@@ -38,6 +39,7 @@ class IndexPage extends PureComponent {
       {/* <SideNavigation activeNav={this.state.activeNav} /> */}
       <Home ref="home"/>
       <Expertise ref="expertise" />
+      <Experience />
       <Contact ref="contact" />
     </Layout>
     );

@@ -1,9 +1,19 @@
 @import '../../partials/colors';
 
+$phoneChangeSequence: 4s;
+
 .Expertise {
   background: #ffffff ;
   color: #222222;
   padding: 60px 0;
+  h2 {
+    font-size: 1.5rem;
+    width: 65%;
+    margin: 5px auto;
+  }
+  p {
+    font-size: 1rem;
+  }
   // height: 100vh;
   &__icons {
     font-size: 5rem;
@@ -11,5 +21,232 @@
     margin: 0 auto;
     text-align: center;
   }
+  &__exp {
+    margin: 10px 0px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  &__stacks {
+    font-size: 0.8rem;
+    color: rgba($color: #222222, $alpha: 0.5);
+  }
+}
 
+.Browser {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #3f3c3c;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  animation: changeToPhone ease-in-out $phoneChangeSequence infinite;
+  .tile-bar {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #3f3c3c;
+    animation: fadeTileBar ease-in-out $phoneChangeSequence infinite;
+    .green, .red {
+      position: absolute;
+      top:  -7px;
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      animation: hideTileButtons ease-in-out $phoneChangeSequence infinite;
+    }
+    .green {
+      background: green;
+      right: 12px;
+    }
+    .red {
+      background: red;
+      right: 6px;
+    }
+  }
+
+  .content-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 48px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    // overflow: hidden;
+    animation: contentBox ease-in-out $phoneChangeSequence infinite;
+    .content {
+      width: 10px;
+      height: 15px;
+      background: rgb(46, 46, 46);
+      animation: contentTile ease-in-out $phoneChangeSequence infinite;
+    }
+    .content-pic {
+      position: absolute;
+      left: 10px;
+      top: -6px;
+      width: 10px;
+      height: 10px;
+      background: $color-blue;
+      border-radius: 100%;
+      animation: contentPic ease-in-out $phoneChangeSequence infinite;
+    }
+    .content-texts {
+      position: absolute;
+      top: -6px;
+      right: 8px;
+      width: 28px;
+      height: 25px;
+      animation: contentTexts ease-in-out $phoneChangeSequence infinite;
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: rgba(46, 46, 46, 0.5);
+        box-shadow: 0px 6px 0px rgba(46, 46, 46, 0.5), 0px 12px 0 rgba(46, 46, 46, 0.5);
+      }
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+}
+
+.Terminal {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #3f3c3c;
+  border-radius: 6px;
+  // &:hover:after {
+  //   animation: blinking linear 1s infinite;
+  // }
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  &::before {
+    top: 30%;
+    left: 6px;
+    width: 10px;
+    height: 10px;
+    transform: translateY(-50%) rotate(225deg);
+    border-left: 3px solid #222222;
+    border-bottom: 3px solid #222222;
+  }
+  &::after {
+    width: 12px;
+    height: 2px;
+    top: 38%;
+    left: 20px;
+    border-bottom: 4px solid $color-blue;
+    animation: blinking linear 1s infinite;
+  }
+}
+
+@keyframes blinking {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes changeToPhone {
+  0% {
+    width: 68px;
+  }
+  50% {
+    width: 38px;
+    border-top: 8px solid #3f3c3c;
+    border-bottom: 8px solid #3f3c3c;
+  }
+  100% {
+    width: 68px;
+  }
+}
+
+@keyframes fadeTileBar {
+  50% {
+    top: 0;
+    left: 20px;
+    width: 26px;
+  }
+}
+
+@keyframes hideTileButtons {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contentBox {
+  0% {
+    width: 60px;
+  }
+  50% {
+    width: 18px;
+    top: 10px;
+    // overflow: hidden;
+  }
+  100% {
+    width: 60px;
+  }
+}
+
+@keyframes contentTile {
+  50% {
+    width: 10px;
+    margin: 1px;
+    left: 50%;
+    transform: translateX(0%) translateY(180%);
+  }
+}
+
+@keyframes contentPic {
+  50% {
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes contentTexts {
+  0% {
+    width: 28px;
+  }
+  25% {
+    top: 11px;
+    height: 16px;
+  }
+  50% {
+    top: 15px;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+  }
+  75% {
+    top: 10px;
+    height: 16px;
+  }
+  100% {
+    width: 28px;
+  }
 }

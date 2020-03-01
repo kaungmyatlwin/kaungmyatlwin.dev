@@ -31,11 +31,11 @@ const Contact = (props, ref) => {
               </div>
               <div className="contactForm__control">
                 <label htmlFor="">What's this about</label>
-                <Select className="contactForm__select">
-                  <option disabled selected>Select one...</option>
-                  <option value="">For hiring</option>
-                  <option value="">Freelance Project</option>
-                  <option value="">Just for Coffee</option>
+                <Select className="contactForm__select" defaultValue="select-one">
+                  <option disabled value="select-one">Select one...</option>
+                  <option>For hiring</option>
+                  <option>Freelance Project</option>
+                  <option>Just for Coffee</option>
                 </Select>
               </div>
               <div className="contactForm__control">

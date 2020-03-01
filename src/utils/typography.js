@@ -7,6 +7,10 @@ const typography = new Typography(
     baseLineHeight: 1.45,
     googleFonts: [
       {
+        name: 'Roboto Slab',
+        styles: ['300', '400', '700'],
+      },
+      {
         name: 'Maven Pro',
         styles: ['300', '400', '700'],
       },

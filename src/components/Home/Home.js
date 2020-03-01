@@ -6,7 +6,7 @@ import {
   CSSTransition,
   Transition,
 } from 'react-transition-group';
-import kmlPic from '../../images/kml-transparent.png';
+import kmlPic from '../../images/kml-mv.jpg';
 import './Home.scss';
 import Button from '../Button/Button';
 
@@ -72,83 +72,23 @@ const Home = (props, ref) => {
 
   return (
     <section id="home" className="Home__Header" ref={ref}>
-      <div className="container-fluid h-100">
+      <div className="container h-100">
         <div className="row no-gutters align-items-center h-100">
-          <div className="col-lg-6 col-md-12 Home__aboutWrapper">
-            <div className="Home__aboutKML">
-              <SwitchTransition mode="out-in">
-                <CSSTransition
-                  key={isAboutMeOpen ? 'about-me' : 'start'}
-                  addEndListener={(node, done) =>
-                    node.addEventListener('transitionend', done, false)
-                  }
-                  classNames="brief"
-                  timeout={200}
-                >
-                  <div className="Home__brief">
-                    {isAboutMeOpen ? (
-                      <p className="Home__AboutMe">
-                        <span className="text-big">F</span>rom the very
-                        childhood, I was very fascinated by{' '}
-                        <span className="color-blue">how things worked</span>,
-                        inside a machine or even the whole universe. This
-                        fascination had carried on through the years that lead
-                        to passion in Programming. <br />
-                        <span className="text-big">S</span>ince the graduation
-                        from{' '}
-                        <span className="color-blue">
-                          University of Greenwich
-                        </span>{' '}
-                        with bachelor in Information Technology in 2017, I've
-                        worked in Software Industry, mainly focusing on{' '}
-                        <span className="color-blue">Web Applications</span>.{' '}
-                        <br />
-                        <span className="text-big">T</span>hough I tackle any
-                        problem with possible solutions, my most proficient
-                        language remains{' '}
-                        <span className="color-blue">Javascript</span> and{' '}
-                        <span className="color-dark-grey">
-                          <i>React / Node / Mongo</i>
-                        </span>{' '}
-                        as my Tech Stack.
-                      </p>
-                    ) : (
-                      <>
-                        <h1>
-                          <span className="color-blue">Hello</span> there!
-                        </h1>
-                        <h2>
-                          My name is Kaung Myat{' '}
-                          <span className="color-blue">Lwin</span>.
-                        </h2>
-                        <h2>
-                          A{' '}
-                          <span className="color-blue">software developer</span>{' '}
-                          based in {weatherEmoji}{' '}
-                          <span className="color-gold">Yangon</span>.
-                        </h2>
-                      </>
-                    )}
-                  </div>
-                </CSSTransition>
-              </SwitchTransition>
-              <Button
-                className="text-uppercase Home__aboutKMLBtn"
-                style={{ minWidth: 150, maxWidth: 150 }}
-                onClick={onClickAboutMe}
-              >
-                {!isAboutMeOpen ? 'About' : 'Close'}
-              </Button>
-            </div>
+          <div className="col-lg-6 col-md-6 Home__aboutWrapper mt-1">
+            <h1>
+              <span className="color-blue">Hello</span> there!
+            </h1>
+            <p className="no-margin Home__shortDescription">
+              This is Kaung Myat{' '}
+              <span className="color-blue">Lwin</span>. <br />
+              A{' '}
+              <span className="color-blue">software developer</span>{' '}
+              based in {weatherEmoji}{' '}
+              <span className="color-gold">Yangon</span>.
+            </p>
           </div>
-          <div className="col-lg-6 col-md-12 Home__kmlPic">
-            <div
-              className="Home__bg"
-              // onMouseMove={onMouseMove}
-              style={{
-                backgroundImage: `url(${kmlPic})`,
-              }}
-            ></div>
+          <div className="col-lg-6 mt-1">
+            <img src={kmlPic} className="Home__kmlPic" />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  // background: #eff0f3;
 }
 
 .color-blue {
@@ -132,7 +133,14 @@ label {
   display: block;
 }
 
+.no-margin {
+  margin: 0;
+}
+
 @media (min-width: 1200px) {
+  .container {
+    width: 800px;
+  }
   h1 {
     font-size: 3rem;
     margin: 1rem 0;

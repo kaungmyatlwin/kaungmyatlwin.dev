@@ -1,21 +1,59 @@
 import React, { forwardRef } from 'react';
 import './Expertise.scss';
 
+const iconBaseStyle = {
+  width: '68px',
+  height: '54px',
+  position: 'relative',
+  boxSizing: 'border-box',
+  marginBottom: '16px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+}
+
+const FrontEndIcon = () => {
+  return (
+    <div style={iconBaseStyle}>
+      <div className="Browser">
+        <div className="tile-bar">
+          <i className="green"></i>
+          <i className="red"></i>
+        </div>
+        <div className="content-box">
+          <div className="content-pic"></div>
+          <div className="content-texts"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const BackendIcon = () => {
+  return (
+    <div style={iconBaseStyle}>
+      <div className="Terminal" />
+    </div>
+  );
+}
+
 const services = [
   {
-    icon: 'ri-window-line',
+    icon: <FrontEndIcon />,
     title: 'Frontend Development',
-    body: 'I craft intuitive, responsive and dynamic web applications scaling from your pocket phone to a big screen.'
+    body: 'Crafts dynamic web apps scaling from your pocket phone to a big screen.',
+    stacks: ['React', 'Vue', 'jQuery']
   },
   {
-    icon: 'ri-terminal-box-line',
+    icon: <BackendIcon />,
     title: 'Backend Development',
-    body: 'For both clients & developers, I code secure backend APIs to integrate into their apps, ranging from Public to Private APIs.'
+    body: 'Delivers secure and scalable backend APIs, ranging from Public to Private ones.',
+    stacks: ['ExpressJS', 'MongoDB', 'PostgreSQL']
   },
   {
     icon: 'ri-cloud-line',
-    title: 'Cloud Deployment',
-    body: 'I do devops operations to deploy the finished products on cloud servers to deliver to end users.'
+    title: 'Product Deployment',
+    body: 'Deploys the finished products on cloud servers to deliver to end users.',
+    stacks: ['nginx', 'Linux']
   }
 ];
 
@@ -24,24 +62,20 @@ const Expertise = (props, ref) => {
     <section id="expertise" className="Expertise" ref={ref}>
       <div className="container">
         <div className="row">
-          <h1 className="text-center w-100">My <span className="color-blue">Expertise</span></h1>
+          <h1 className="text-center w-100">He <span className="color-blue">Does</span></h1>
         </div>
         <div className="row">
           {
-            services.map(({ icon, title, body }, i) => {
+            services.map(({ icon, title, body, stacks }, i) => {
               return (
-                <div className="col-xs-12 col-md-4 text-center" key={i}>
+                <div className="col-xs-12 col-md-4 text-center Expertise__exp" key={i}>
                   <div className="Expertise__icons">
-                    <i className={icon}></i>
+                    {/* <i className={icon}></i> */}
+                    {icon}
                   </div>
-              {/* <h2 className="text-center">{
-                title
-                  .split(' ')
-                  .map((t, j) => j === 0 ? <span className="color-blue">{t} </span> : t)
-                }
-              </h2> */}
                   <h2 className="text-center">{title}</h2>
                   <p>{body}</p>
+                  <span className="Expertise__stacks"><i>{stacks.join(' / ')}</i></span>
                 </div>
               );
             })
