@@ -36,6 +36,25 @@ const BackendIcon = () => {
   );
 }
 
+const DeploymentIcon = () => {
+  return (
+    <div style={iconBaseStyle}>
+      <div className="server">
+        <div className="led red"></div>
+        {/* <div className="led blue"></div> */}
+      </div>
+      <div className="server">
+        <div className="led green"></div>
+        {/* <div className="led"></div> */}
+      </div>
+      <div className="server">
+        <div className="led idle"></div>
+        {/* <div className="led"></div> */}
+      </div>
+    </div>
+  );
+}
+
 const services = [
   {
     icon: <FrontEndIcon />,
@@ -50,7 +69,7 @@ const services = [
     stacks: ['ExpressJS', 'MongoDB', 'PostgreSQL']
   },
   {
-    icon: 'ri-cloud-line',
+    icon: <DeploymentIcon />,
     title: 'Product Deployment',
     body: 'Deploys the finished products on cloud servers to deliver to end users.',
     stacks: ['nginx', 'Linux']
@@ -62,7 +81,7 @@ const Expertise = (props, ref) => {
     <section id="expertise" className="Expertise" ref={ref}>
       <div className="container">
         <div className="row">
-          <h1 className="text-center w-100">He <span className="color-blue">Does</span></h1>
+          <h1 className="text-center w-100">He Does</h1>
         </div>
         <div className="row">
           {

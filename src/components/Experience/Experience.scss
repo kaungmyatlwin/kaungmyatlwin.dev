@@ -1,0 +1,35 @@
+.timeline {
+  position: relative;
+  text-align: left;
+}
+
+.timeline-step {
+  display: flex;
+  // width: 100px;
+}
+
+.timeline-dir-left {
+  text-align: left;
+  // transform: translateX(-5%);
+}
+
+.timeline-dir-right {
+  text-align: left;
+  // transform: translateX(5%);
+}
+
+@media (min-width: 1200px) {
+  .timeline-dir-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-100%) translateY(-50%);
+  }
+
+  .timeline-dir-right {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translateX(100%) translateY(-50%);
+  }
+}

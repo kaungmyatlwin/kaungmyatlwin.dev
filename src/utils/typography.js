@@ -22,6 +22,10 @@ const typography = new Typography(
         name: 'Josefin Sans',
         styles: ['400', '400i', '700', '700i'],
       },
+      {
+        name: 'IBM Plex Mono',
+        styles: ['400', '400i', '700', '700i'],
+      },
     ],
     headerFontFamily: [
       'Josefin Sans',
@@ -31,7 +35,7 @@ const typography = new Typography(
       'Arial',
       'sans-serif',
     ],
-    bodyFontFamily: ['Maven Pro', 'Georgia', 'serif'],
+    bodyFontFamily: ['IBM Plex Mono', 'Georgia', 'serif'],
   }
   // funstonTheme
   // doelgerTheme

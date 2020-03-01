@@ -76,14 +76,10 @@ const Home = (props, ref) => {
         <div className="row no-gutters align-items-center h-100">
           <div className="col-lg-6 col-md-6 Home__aboutWrapper mt-1">
             <h1>
-              <span className="color-blue">Hello</span> there!
+              This is <br />Kaung Myat Lwin.
             </h1>
             <p className="no-margin Home__shortDescription">
-              This is Kaung Myat{' '}
-              <span className="color-blue">Lwin</span>. <br />
-              A{' '}
-              <span className="color-blue">software developer</span>{' '}
-              based in {weatherEmoji}{' '}
+              A software developer based in {weatherEmoji}{' '}
               <span className="color-gold">Yangon</span>.
             </p>
           </div>
