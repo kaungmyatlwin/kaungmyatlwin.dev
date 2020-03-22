@@ -1,16 +1,9 @@
-import React, { useState, useEffect, forwardRef } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import React, { forwardRef } from 'react';
+import { useStaticQuery } from 'gatsby';
 import kmlPic from '../../images/kml-mv.jpg';
 import './Home.scss';
-import Button from '../Button/Button';
-
-const personalities = ['software developer', 'dog lover', 'linux enthusiast'];
 
 const Home = (props, ref) => {
-  const [personality, setPersonality] = useState(personalities[0]);
-  const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
-  const [imagePos, setImagePos] = useState({ xPos: 0, yPos: 0 });
-
   const socialLinks = [
     {
       icon: 'ri-linkedin-box-fill',
@@ -29,21 +22,22 @@ const Home = (props, ref) => {
       url: '//messenger.com/t/kmlwin.me',
     },
   ];
-  // const weatherData = useStaticQuery(graphql`
-  //   query {
-  //     openWeather {
-  //       weather {
-  //         id
-  //       }
-  //     }
-  //   }
-  // `);
 
-  // const weatherCode = weatherData.openWeather.weather[0].id
-  //   .toString()
-  //   .slice(0, 1);
+  const weatherData = useStaticQuery(graphql`
+    query {
+      openWeather {
+        weather {
+          id
+        }
+      }
+    }
+  `);
 
-  const weatherCode = '8';
+  const weatherCode = weatherData.openWeather.weather[0].id
+    .toString()
+    .slice(0, 1);
+
+  // const weatherCode = '8';
 
   const weatherEmoji = (
     <>
@@ -64,25 +58,6 @@ const Home = (props, ref) => {
     </>
   );
 
-  function onClickAboutMe() {
-    setIsAboutMeOpen(!isAboutMeOpen);
-  }
-
-  const transitionStyles = {
-    entering: { opacity: 1 },
-    entered: { opacity: 1 },
-    exiting: { opacity: 0 },
-    exited: { opacity: 0 },
-  };
-
-  function onMouseMove(e) {
-    console.log(-e.clientY);
-    setImagePos({
-      xPos: -e.clientX,
-      yPos: -e.clientY,
-    });
-  }
-
   return (
     <section id="home" className="Home__Header" ref={ref}>
       <div className="container h-100">
@@ -98,7 +73,7 @@ const Home = (props, ref) => {
             <div className="Home__socialLinks">
               {
                 socialLinks.map(({ icon, url }, i) => (
-                  <a href={url} rel="noopenner" target="_blank" key={i}>
+                  <a href={url} rel="noopener noreferrer" target="_blank" key={i}>
                     <i className={icon}></i>
                   </a>
                 ))
@@ -106,7 +81,7 @@ const Home = (props, ref) => {
             </div>
           </div>
           <div className="col-lg-6 mt-1">
-            <img src={kmlPic} className="Home__kmlPic" />
+            <img src={kmlPic} className="Home__kmlPic" alt="Kaung Myat Lwin" />
           </div>
         </div>
       </div>

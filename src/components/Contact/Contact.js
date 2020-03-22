@@ -6,7 +6,6 @@ import './Contact.scss';
 const { TextArea, Select } = Input;
 
 const Contact = (props, ref) => {
-  const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
   function onSubmitForm(e) {
@@ -22,10 +21,8 @@ const Contact = (props, ref) => {
       if (xhr.readyState !== XMLHttpRequest.DONE) return;
       if (xhr.status === 200) {
         form.reset();
-        setStatus('SUCCESS');
         setLoading(false);
       } else {
-        setStatus('ERROR');
         setLoading(false);
       }
     };
@@ -55,7 +52,7 @@ const Contact = (props, ref) => {
                 <Input id="email" className="contactForm__input" required type="email" placeholder="How can he contact you back?" name="email" />
               </div>
               <div className="contactForm__control">
-                <label htmlFor="">What's this about?</label>
+                <label htmlFor="reason">What's this about?</label>
                 <Select className="contactForm__select" defaultValue="select-one" name="reason">
                   <option disabled value="select-one">Select one...</option>
                   <option>For hiring</option>
@@ -64,7 +61,7 @@ const Contact = (props, ref) => {
                 </Select>
               </div>
               <div className="contactForm__control">
-                <label htmlFor="">Message</label>
+                <label htmlFor="message">Message</label>
                 <TextArea
                   className="contactForm__message"
                   placeholder="Anything you'd love to say to me."

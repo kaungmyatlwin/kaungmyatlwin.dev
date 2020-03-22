@@ -55,7 +55,7 @@ const Experience = () => {
           </div>
           <div className="timeline text-center">
             <div className="timeline-title">EXPA.AI</div>
-            <div className="timeline-subtitle">Responsible for handling certain features of EXPA.AI, the <a href="//dashboard.expa.ai" rel="noopenner" target="_blank">main product</a> of Base Technology.</div>
+            <div className="timeline-subtitle">Responsible for handling certain features of EXPA.AI, the <a href="//dashboard.expa.ai" rel="noopener noreferrer" target="_blank">main product</a> of Base Technology.</div>
             <div className="timeline-stacks">{
               [
                 'NodeJS',

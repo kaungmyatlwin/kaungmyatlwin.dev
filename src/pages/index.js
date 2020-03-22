@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import SideNavigation from '../components/Navigation/SideNavigation';
+// import SideNavigation from '../components/Navigation/SideNavigation';
 import Home from '../components/Home/Home';
-import Chat from '../components/Chat/Chat';
+// import Chat from '../components/Chat/Chat';
 import Expertise from '../components/Expertise/Expertise';
 import Contact from '../components/Contact/Contact';
 // import Image from '../components/image';
