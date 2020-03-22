@@ -3,6 +3,7 @@ module.exports = {
     title: `Kaung Myat Lwin`,
     description: `A software developer based in Yangon.`,
     author: `@dev_kmlwin`,
+    siteUrl: 'https://kaungmyatlwin.dev',
   },
   plugins: [
     {
