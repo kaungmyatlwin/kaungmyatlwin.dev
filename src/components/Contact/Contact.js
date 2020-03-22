@@ -64,7 +64,7 @@ const Contact = (props, ref) => {
                 <label htmlFor="message">Message</label>
                 <TextArea
                   className="contactForm__message"
-                  placeholder="Anything you'd love to say to me."
+                  placeholder="Anything you'd love to say to him..."
                   name="message"
                 ></TextArea>
               </div>
