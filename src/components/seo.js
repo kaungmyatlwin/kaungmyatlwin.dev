@@ -20,6 +20,7 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
+            siteUrl
             author
           }
         }
@@ -51,6 +52,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: `${siteUrl}${kmlPic}`
         },
         {
           property: `og:url`,
