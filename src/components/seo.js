@@ -55,7 +55,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `${siteUrl}${kmlPic}`
+          content: `${site.siteMetadata.siteUrl}${kmlPic}`
         },
         {
           property: `og:url`,
