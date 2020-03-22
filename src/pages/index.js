@@ -37,7 +37,7 @@ class IndexPage extends PureComponent {
   render() {
     return (
     <Layout>
-      <SEO />
+      <SEO title="Kaung Myat Lwin" />
       {/* <SideNavigation activeNav={this.state.activeNav} /> */}
       <Home ref="home"/>
       <Expertise ref="expertise" />
