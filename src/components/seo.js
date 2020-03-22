@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import favicon from '../images/kml-favicon.png';
+import kmlPic from '../images/kml-mv.jpg';
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -54,6 +55,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:url`,
           content: `https://kaungmyatlwin.dev`
+        },
+        {
+          property: `og:image`,
+          content: kmlPic,
         },
         {
           property: `og:type`,
