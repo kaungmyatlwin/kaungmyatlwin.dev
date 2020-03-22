@@ -11,6 +11,9 @@ import Contact from '../components/Contact/Contact';
 import SEO from '../components/seo';
 import Experience from '../components/Experience/Experience';
 
+const date = new Date();
+const currentYear = date.getFullYear();
+
 class IndexPage extends PureComponent {
   state = {
     activeNav: 'home',
@@ -41,6 +44,13 @@ class IndexPage extends PureComponent {
       <Expertise ref="expertise" />
       <Experience />
       <Contact ref="contact" />
+      <div className="container footer">
+        <div className="row">
+          <footer className="col-12 justify-content-center">
+            <small>&copy; Copyright {currentYear}, kaungmyatlwin.dev. <b>All Rights Reserved.</b></small>
+          </footer>
+        </div>
+      </div>
     </Layout>
     );
   }

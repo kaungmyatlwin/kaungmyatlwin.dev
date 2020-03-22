@@ -1,11 +1,5 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import {
-  TransitionGroup,
-  SwitchTransition,
-  CSSTransition,
-  Transition,
-} from 'react-transition-group';
 import kmlPic from '../../images/kml-mv.jpg';
 import './Home.scss';
 import Button from '../Button/Button';
@@ -16,6 +10,25 @@ const Home = (props, ref) => {
   const [personality, setPersonality] = useState(personalities[0]);
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
   const [imagePos, setImagePos] = useState({ xPos: 0, yPos: 0 });
+
+  const socialLinks = [
+    {
+      icon: 'ri-linkedin-box-fill',
+      url: '//www.linkedin.com/in/kaungmyatlwin/',
+    },
+    {
+      icon: 'ri-twitter-fill',
+      url: '//twitter.com/dev_kmlwin',
+    },
+    {
+      icon: 'ri-github-fill',
+      url: '//github.com/kaungmyatlwin',
+    },
+    {
+      icon: 'ri-messenger-fill',
+      url: '//messenger.com/t/kmlwin.me',
+    },
+  ];
   // const weatherData = useStaticQuery(graphql`
   //   query {
   //     openWeather {
@@ -82,6 +95,15 @@ const Home = (props, ref) => {
               A software developer based in {weatherEmoji}{' '}
               <span className="color-gold">Yangon</span>.
             </p>
+            <div className="Home__socialLinks">
+              {
+                socialLinks.map(({ icon, url }, i) => (
+                  <a href={url} rel="noopenner" target="_blank" key={i}>
+                    <i className={icon}></i>
+                  </a>
+                ))
+              }
+            </div>
           </div>
           <div className="col-lg-6 mt-1">
             <img src={kmlPic} className="Home__kmlPic" />

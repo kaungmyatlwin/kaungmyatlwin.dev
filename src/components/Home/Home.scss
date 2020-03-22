@@ -13,6 +13,28 @@ $aboutContainerWidth: 360px;
   h3 {
     font-size: 1rem;
   }
+  &__socialLinks {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    a {
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      text-decoration: none;
+      font-size: 1.65rem;
+      color: $color-grey;
+      overflow: hidden;
+      transition: all 0.2s linear;
+      &:first-child {
+        margin-left: 0;
+      }
+      margin-left: 5px;
+      margin-right: 5px;
+      &:hover {
+        color: rgba($color: $color-grey, $alpha: 0.5);
+      }
+    }
+  }
   &__Header {
     width: 100%;
     padding: 30px;

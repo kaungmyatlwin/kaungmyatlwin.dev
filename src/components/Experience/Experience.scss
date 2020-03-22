@@ -1,6 +1,36 @@
+.Experience {
+  .career-title {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+  }
+}
+
 .timeline {
   position: relative;
-  text-align: left;
+  min-width: 320px;
+  max-width: 400px;
+  margin: 25px auto;
+  &-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  &-subtitle {
+    line-height: 24px;
+    margin-bottom: 5px;
+    white-space: pre-wrap;
+  }
+  &-contentWrapper {
+    margin: 0px 5px;
+  }
+  &-stacks {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba($color: #000000, $alpha: 0.4);
+  }
+  .arrow {
+    width: 115px;
+  }
 }
 
 .timeline-step {
@@ -14,22 +44,16 @@
 }
 
 .timeline-dir-right {
-  text-align: left;
+  // text-align: left;
   // transform: translateX(5%);
 }
 
 @media (min-width: 1200px) {
   .timeline-dir-left {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-100%) translateY(-50%);
+    float: left;
   }
 
   .timeline-dir-right {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translateX(100%) translateY(-50%);
+    float: right;
   }
 }
