@@ -57,10 +57,6 @@ function SEO({ description, lang, meta, title }) {
           content: `https://kaungmyatlwin.dev`
         },
         {
-          property: `og:image`,
-          content: kmlPic,
-        },
-        {
           property: `og:type`,
           content: `website`,
         },
