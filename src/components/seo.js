@@ -52,6 +52,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          property: `og:url`,
+          content: `https://kaungmyatlwin.dev`
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
