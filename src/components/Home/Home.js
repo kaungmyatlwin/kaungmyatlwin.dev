@@ -39,8 +39,6 @@ const Home = (props, ref) => {
 
   // const weatherCode = '8';
 
-  console.log(weatherData, weatherCode);
-
   const weatherEmoji = (
     <>
       {(() => {
