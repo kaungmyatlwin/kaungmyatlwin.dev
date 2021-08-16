@@ -35,9 +35,11 @@ const Home = (props, ref) => {
 
   const weatherCode = weatherData.openWeather.weather[0].id
     .toString()
-    .slice(0, 1);
+    .slice(2, 3);
 
   // const weatherCode = '8';
+
+  console.log(weatherData, weatherCode);
 
   const weatherEmoji = (
     <>
