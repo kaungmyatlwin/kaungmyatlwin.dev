@@ -51,7 +51,7 @@ const Experience = () => {
         <hr className="divider" />
         <div className="row">
           <div className="text-center w-100">
-            <h2 className="career-title">Base Technology (Nov 2018 - Present)<br />Software Developer</h2>
+            <h2 className="career-title">Base Technology (Nov 2018 - May 2021)<br />Software Developer</h2>
           </div>
           <div className="timeline text-center">
             <div className="timeline-title">EXPA.AI</div>
@@ -64,6 +64,24 @@ const Experience = () => {
                 'Redis',
                 'PostgreSQL',
                 'MongoDB',
+              ].join(' / ')
+            }</div>
+          </div>
+        </div>
+        <hr className="divider" />
+        <div className="row">
+          <div className="text-center w-100">
+            <h2 className="career-title">Amity (Aug 2021 - Present)<br />Web Engineer</h2>
+          </div>
+          <div className="timeline text-center">
+            <div className="timeline-title">Amity Social Cloud</div>
+            <div className="timeline-subtitle">Currently working at <a href="//amity.co" target="_blank" rel="noopener">amity.co</a> as a Web Engineer.</div>
+            <div className="timeline-stacks">{
+              [
+                'NodeJS',
+                'GraphQL',
+                'ReactJS',
+                'TypeScript'
               ].join(' / ')
             }</div>
           </div>
