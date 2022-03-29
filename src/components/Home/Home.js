@@ -1,7 +1,14 @@
-import React, { forwardRef } from 'react';
-import { useStaticQuery } from 'gatsby';
+import React, { useState, forwardRef, useEffect } from 'react';
+import { graphql } from 'gatsby';
 import kmlPic from '../../images/kml-mv.jpg';
 import './Home.scss';
+
+const API_KEY = '009db423a922137c9442788dae5544c5';
+const LOCATION = 'Bangkok';
+const UNIT = 'metric';
+const TYPE = 'weather';
+
+const ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?q=${LOCATION}&units=${UNIT}&type=${TYPE}&appId=${API_KEY}`;
 
 const Home = (props, ref) => {
   const socialLinks = [
@@ -23,40 +30,34 @@ const Home = (props, ref) => {
     },
   ];
 
-  const weatherData = useStaticQuery(graphql`
-    query {
-      openWeather {
-        weather {
-          id
-        }
-      }
-    }
-  `);
+  const [weather, setWeather] = useState('🌞');
 
-  const weatherCode = weatherData.openWeather.weather[0].id
-    .toString()
-    .slice(2, 3);
+  useEffect(async () => {
+    fetch(ENDPOINT)
+      .then((response) => response.json())
+      .then((weatherData) => {
+        const weatherCode = weatherData?.weather[0]
+          .toString()[0];
 
-  // const weatherCode = '8';
-
-  const weatherEmoji = (
-    <>
-      {(() => {
         switch (weatherCode) {
           case '2':
-            return '⛈️';
+            setWeather('⛈️');
+            break;
           case '3':
           case '5':
-            return '🌧️';
+            setWeather('🌧️');
+            break;
           case '7':
-            return '🌫️';
+            setWeather('🌫️');
+            break;
           case '8':
           default:
-            return '🌞';
-        }
-      })()}
-    </>
-  );
+            setWeather('🌞');
+            break;
+        };
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <section id="home" className="Home__Header" ref={ref}>
@@ -67,8 +68,8 @@ const Home = (props, ref) => {
               This is <br />Kaung Myat Lwin.
             </h1>
             <p className="no-margin Home__shortDescription">
-              A software developer based in {weatherEmoji}{' '}
-              <span className="color-gold">Yangon</span>.
+              A Web Engineer based in {weather}{' '}
+              <span className="text-bold color-indigo">Bangkok</span>.
             </p>
             <div className="Home__socialLinks">
               {

@@ -69,7 +69,6 @@ const Chat = () => {
         break;
     }
     steps.shift();
-    console.log(steps);
   }
 
   async function onSubmitChat(e) {

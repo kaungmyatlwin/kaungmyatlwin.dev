@@ -14,26 +14,6 @@ const date = new Date();
 const currentYear = date.getFullYear();
 
 class IndexPage extends PureComponent {
-  state = {
-    activeNav: 'home',
-  }
-
-  componentDidMount() {
-    const targets = Object.values(this.refs);
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0.5) {
-          console.log(entry.target.id);
-          this.setState({ activeNav: entry.target.id });
-        }
-      });
-    }, {
-      threshold: 0.5,
-    });
-
-    targets.forEach((target) => observer.observe(target));
-  }
-
   render() {
     return (
     <Layout>
