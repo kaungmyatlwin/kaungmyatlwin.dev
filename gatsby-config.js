@@ -7,15 +7,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-openweathermap`,
-      options: {
-        apikey: '009db423a922137c9442788dae5544c5',
-        location: 'Yangon',
-        units: 'metric',
-        type: 'weather',
-      },
-    },
-    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
